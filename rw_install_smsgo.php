@@ -1,8 +1,12 @@
 <?php
+
+error_reporting(E_ALL);
+    @ini_set('display_errors', 1);
+
 // si l'installation a déjà été effectué alors on quitte l'install
 @include('rw_config_smsgo.php');
 if(!empty($rw_config) && !empty($rw_config['install_ok'])){
-	
+
 	echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 		<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
 		<title>SMS GO Dédicace Rentabiliweb : Installation</title>
@@ -15,14 +19,14 @@ if(!empty($rw_config) && !empty($rw_config['install_ok'])){
 		</head>
 		<body>
 		<div id="header"><div>Outil SMS Go Dédicace</div>
-		
+
 		</div>
 		<h1 style="margin-bottom:20px;">Application Rentabiliweb SMS Go Dédicace déjà installée</h1>
 		<a style="color:white" href="index.php">Identification</a>
 		</body>
 		</html>';
-	
-	
+
+
 	exit();
 }
 // installation de l'application
@@ -43,7 +47,7 @@ if(!empty($_POST)){
 	{
 		//Pour éviter les Warnings intempestifs
 		error_reporting(0);
-		
+
 		//test de connexion au serveur que le client configure
 		if(!mysql_connect(trim($_POST['rw_db_host']),trim($_POST['rw_db_login']),trim($_POST['rw_db_pass'])))
 		{
@@ -63,7 +67,7 @@ if(!empty($_POST)){
 		{
 			//on ferme la connexion sql généré pdt le test au dessus
 			mysql_close();
-			
+
 			// si on a aucune erreur, on procède à l'installation
 			// génère le fichier de configuration qui sera ecrit en dur
 			$rw_config_file = fopen('rw_config_smsgo.php','w');
@@ -101,7 +105,7 @@ if(!empty($_POST)){
 			include('rw_config_smsgo.php');
 			// connexion à la base de données
 			include('rw_db_connect.php');
-			
+
 			$query1 = "	CREATE TABLE `".$rw_config['db_tables_prefix'].$rw_config['db_table_sms']."` (
 						  `id` int(10) NOT NULL auto_increment,
 						  `sms_content` varchar(200) NOT NULL default '',
@@ -124,7 +128,7 @@ if(isset($_POST['rw_db_name'])) $rw_db_name = $_POST['rw_db_name'];
 if(isset($_POST['rw_db_login'])) $rw_db_login = $_POST['rw_db_login'];
 if(isset($_POST['rw_db_pass'])) $rw_db_pass = $_POST['rw_db_pass'];
 if(isset($_POST['rw_db_table_prefixe']))
-{ 
+{
 	$rw_db_table_prefixe = $_POST['rw_db_table_prefixe'];
 }
 else $rw_db_table_prefixe = 'rw_';
@@ -225,7 +229,7 @@ if(!empty($db_error))
 		<td colspan="2" align="center" style="color:red;">* Champs obligatoires</td>
 	</tr>
 	<tr class="normal">
-		<td colspan="2" align="center"><span style="font-size:22px; font-weight:bold; text-decoration:underline;">INFORMATION IMPORTANTE</span><br /><span style="font-weight:bold;">Voici l'url de réponse que vous devez spécifier <br />dans votre espace admin 
+		<td colspan="2" align="center"><span style="font-size:22px; font-weight:bold; text-decoration:underline;">INFORMATION IMPORTANTE</span><br /><span style="font-weight:bold;">Voici l'url de réponse que vous devez spécifier <br />dans votre espace admin
 		de Rentabiliweb :</span><br />
 		<?php echo $url_response_full; ?></td>
 	</tr>
