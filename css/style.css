@@ -1,0 +1,178 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-size: 1em;
+	font-family: Arial, Helvetica, sans-serif;
+	color: black;
+}
+
+body {
+	background:  url(../images/bg-page.png) repeat-x scroll 0 0 transparent;
+	width: 980px;
+	margin: 0 auto;
+}
+
+body,h2,h3, h4, h5{
+	text-align:center;
+}
+h1 {
+	font-size:18px;
+	color:white;
+	margin-bottom:70px;
+}
+p {
+	margin-top:5px;
+}
+#messages_get_actions {
+	margin-bottom:30px;
+}
+p a {
+	
+	color:white;
+	text-decoration:none;
+}
+p a:hover {
+	color:#C0C0C0;
+	text-decoration:underline;
+}
+#header {
+	background: url(../images/bg-head.png) no-repeat;
+	width: 980px;
+	height: 125px;
+}
+#header div {
+	padding-left: 650px;
+	padding-top:3px;
+	color: #e09e00;
+	font-weight: bold;
+	font-size:0.70em;
+}
+#header div a {
+	color:white;
+	text-decoration:none;
+}
+#header div a:hover {
+	text-decoration:underline;
+}
+
+
+.table{
+	border: solid 1px #c2d4e7;
+}
+
+.table tr:hover td {
+	background-color: #fff5df;
+}
+.table .normal:hover td{
+	background-color: white;
+}
+table,
+caption{
+	
+	margin : 0 auto;
+	border-collapse : collapse;
+}
+caption {
+	font-weight:bold;
+	font-size:0.9em;
+	color: #E09E00;
+	padding-bottom:15px;
+}
+table#display_sms_validation,
+table#display_sms_validation caption{
+	width : 760px;
+}
+table td,
+table th{
+	padding : 3px 10px;
+	color: #2D4F84;
+	font-size:0.8em;
+}
+table td+td+td{
+	text-align:center;
+}
+.display_sms_validation_sms_content{
+	width : 450px;
+}
+table tr {
+	border-bottom : 1px solid #c2d4e7;
+}
+
+.button {
+	margin-top:15px;
+}
+
+.button a.button_medium {
+ 	display:inline-block;
+	color: white;
+	text-decoration:none;
+	font-weight: bold;
+	padding-top:7px;
+	background: url(../images/button_medium.png) no-repeat scroll 0 0 transparent;
+	width:136px;
+	height:35px;
+}
+.button a:hover {
+	text-decoration:underline;
+}
+.button2 {
+	margin:auto;
+	padding-top:15px;
+	padding-bottom:30px;
+}
+.notice {
+	margin:auto;
+	width:550px;
+	text-align:center;
+	font-size:12px;
+	border: 1px dashed grey;
+	background-color:#E8E8E8;
+}
+.notice span {
+	color:#4A4A4A;
+	font-size:13px;
+	font-style:italic;
+	display: inline-block;
+	}
+.notice a{
+	color:#2D4F84;
+	display: inline-block;
+	text-decoration:none;
+}
+.notice a:hover{
+	text-decoration:underline;
+}
+ul {
+	width:500px;
+	margin-bottom:20px;
+	border:1px solid red; 
+	margin:auto; 
+	margin-bottom: 20px; 
+	background-color: #CCCCCC; 
+	font-weight:bold;
+	list-style-type:none;
+}
+li {
+	font-size:12px;
+	color:red;
+}
+label{
+	border : 1px solid #C2D4E7;
+	margin-left : 10px;
+	padding : 2px 5px;
+	font-size: 14px;
+}
+#pagination a{
+	display : block;
+	float : left;
+	margin : 2px 5px;
+	padding : 3px 5px;
+	border : 1px solid #cccccc;
+	cursor:pointer;
+}
+.important{
+	color : red;
+}
+#table_view_smsvote_details{
+	text-align : center;
+}
